@@ -11,13 +11,4 @@ import { Headers, RequestOptions } from '@angular/http';
 export class AppComponent {
   title = 'app';
 
-  constructor(
-    private http: HttpClient) { }
-
-  ngOnInit() {
-    this.http.get<User[]>('http://localhost:3000/register')
-      .subscribe(users => {
-        this.title = users[0].email;
-      });
-  }
 }
