@@ -22,14 +22,14 @@ export class RegistrationComponent implements OnInit {
   ngOnInit() {
   }
 
-  register(): void {
+  registration(): void {
     this.authService.registerNewUser(this.user).subscribe({
-      next: (user) => { console.log('next: ' + JSON.stringify(user)); },
+      next: (user) => { console.log(JSON.stringify(user)); },
       error: (err) => {
         console.log(err.status);
-        console.log('err: ' + JSON.stringify(err));
+        console.log(JSON.stringify(err));
       },
-      complete: () => { console.log('complete'); }
+      complete: () => { console.log('registration completed'); }
     });
   }
 
