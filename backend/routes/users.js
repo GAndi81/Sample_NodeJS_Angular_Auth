@@ -73,8 +73,28 @@ router.post("/register", (req, res, next) => {
 /**
  * Felhasználó beléptetése.
  */
-router.post('/login', passport.authenticate('local'), (req, res) => {
-  res.redirect('/');
+router.post('/login', (req, res) => {
+  console.log("trying to log in: " + JSON.stringify(req.body));
+
+  var authenticate = User.authenticate();
+  authenticate(req.body.username, req.body.password, (err, result) => {
+    if (err) {
+      console.log("login err: " + JSON.stringify(err));
+      return res.json(err);
+    }
+    console.log("login result: " + result);
+    delete req.body.password;
+    res.json({
+      "loggedIn": true
+    });
+  });
+});
+
+router.get('/status', (req, res) => {
+  console.log(req);
+  res.json({
+    "loggedIn": req.isAuthenticated()
+  });
 });
 
 

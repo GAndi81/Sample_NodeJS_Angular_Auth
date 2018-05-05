@@ -10,6 +10,8 @@ const URLlogout = 'http://localhost:3000/users/logout';
 @Injectable()
 export class AuthorizationService {
 
+  loggedIn = false;
+
   constructor(private httpClient: HttpClient) { }
 
   registerNewUser(user: User): Observable<User> {
@@ -17,9 +19,23 @@ export class AuthorizationService {
     return this.httpClient.post<User>(URL, user);
   }
 
-  loginUser(user: User): Observable<User> {
+  loginUser(user: User): void {
     console.log('loginUser:' + JSON.stringify(user));
-    return this.httpClient.post<User>(URLlogin, user);
+    this.httpClient.post<User>(URLlogin, user).subscribe({
+      next: (data) => { console.log(); },
+      error: (err) => {
+        console.log(err.status);
+        console.log(JSON.stringify(err));
+      },
+      complete: () => {
+        console.log('user logged in');
+        this.loggedIn = true;
+      }
+    });
+  }
+
+  isLoggedIn(): boolean {
+    return this.loggedIn;
   }
 
 }

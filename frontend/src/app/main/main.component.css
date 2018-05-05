@@ -1,27 +1,6 @@
 #header1 {
-  background-image: url("/src/assets/img/main1.jpg");
+  background-image: url("/src/assets/img/laser.jpeg");
   background-size: cover;
   position: relative;
   height: 60vh;
-}
-
-#header2 {
-  background-image: url("/src/assets/img/main1.jpg");
-  background-size: cover;
-  position: relative;
-  height: 60vh;
-}
-
-#header3 {
-  background-image: url("/src/assets/img/main1.jpg");
-  background-size: cover;
-  position: relative;
-  height: 60vh;
-}
-
-#header4 {
-  background-image: url("/src/assets/img/main1.jpg");
-  background-size: cover;
-  position: relative;
-  height: 60vh;
-}
+};

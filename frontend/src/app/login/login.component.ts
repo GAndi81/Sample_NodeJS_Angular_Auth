@@ -22,15 +22,4 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
-  login(): void {
-    this.authService.loginUser(this.user).subscribe({
-      next: (data) => { console.log(); },
-      error: (err) => {
-        console.log(err.status);
-        console.log(JSON.stringify(err));
-      },
-      complete: () => { console.log('user logged in'); }
-    });
-  }
-
 }
