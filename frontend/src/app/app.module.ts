@@ -11,9 +11,11 @@ import { RegistrationComponent } from './registration/registration.component';
 import { LoginComponent } from './login/login.component';
 
 import { AuthorizationService } from './authorization.service';
+import { MainComponent } from './main/main.component';
 
 const routes: Routes = [
-  { path: '', component: RegistrationComponent, pathMatch: 'full' },
+  { path: '', component: MainComponent, pathMatch: 'full' },
+  { path: 'main', component: MainComponent, pathMatch: 'full' },
   { path: 'registration', component: RegistrationComponent },
   { path: 'login', component: LoginComponent },
 ];
@@ -23,7 +25,8 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     RegistrationComponent,
-    LoginComponent
+    LoginComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
