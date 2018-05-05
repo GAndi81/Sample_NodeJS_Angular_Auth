@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-6">
-      <button data-toggle="modal" data-target="popupWindow" class="btn btn-dark">Login</button>
+      <button data-toggle="modal" data-target="popupWindow" class="btn btn-dark">Bejelentkezés</button>
       <div id="popupWindow" class="modal-fade">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -18,8 +18,7 @@
                   <input type="password" name="password" placeholder="Jelszó" [(ngModel)]="user.password" class="form-control" />
                 </div>
                 <div class="form-group">
-                  <button id="submit" type="submit" (click)="login()">Login</button>
-                  <button id="submit" type="submit" (click)="login()">Logout</button>
+                  <button id="submit" type="submit" (click)="login()">Bejelentkezés</button>
                 </div>
               </form>
             </div>

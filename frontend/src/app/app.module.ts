@@ -10,6 +10,8 @@ import { AppComponent } from './app.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { LoginComponent } from './login/login.component';
 
+import { AuthorizationService } from './authorization.service';
+
 const routes: Routes = [
   { path: '', component: RegistrationComponent, pathMatch: 'full' },
   { path: 'registration', component: RegistrationComponent },
@@ -30,7 +32,7 @@ const routes: Routes = [
     FormsModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [AuthorizationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
